@@ -14,7 +14,9 @@ matrix:
     env:
       - TRAVIS_COVERAGE=1
     script:
-      - go get
+      - cd ../../
+      - mv 932280190 pingcap
+      - cd pingcap/pd
       - make dev
     after_success:
       - travis_wait make travis_coverage
