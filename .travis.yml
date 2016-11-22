@@ -11,6 +11,10 @@ matrix:
   - go: 1.7
     install:
       - go get github.com/mattn/goveralls
+      - go get github.com/juju/errors
+      - go get github.com/ngaut/log
+      - go get github.com/pingcap/pd/server
+      - go get github.com/pingcap/pd/server/api
     env:
       - TRAVIS_COVERAGE=1
     script:
