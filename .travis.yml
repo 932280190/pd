@@ -4,6 +4,9 @@ go:
   - 1.6
 
 script:
+  - cd ../../
+  - mv 932280190 pingcap
+  - cd pingcap/pd
   - make dev
 
 matrix:
@@ -11,13 +14,12 @@ matrix:
   - go: 1.7
     install:
       - go get github.com/mattn/goveralls
-      - go get github.com/juju/errors
-      - go get github.com/ngaut/log
-      - go get github.com/pingcap/pd/server
-      - go get github.com/pingcap/pd/server/api
     env:
       - TRAVIS_COVERAGE=1
     script:
+      - cd ../../
+      - mv 932280190 pingcap
+      - cd pingcap/pd
       - make dev
     after_success:
       - travis_wait make travis_coverage
