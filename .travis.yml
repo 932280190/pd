@@ -6,6 +6,7 @@ go:
 script:
   - make dev
 
+
 matrix:
   include:
   - go: 1.7
